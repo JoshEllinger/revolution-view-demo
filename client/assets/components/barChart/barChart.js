@@ -83,15 +83,19 @@
       var columns = [];
       var id = 0;
 
-      columns.push(formatColumn(vm.doc['director_info.director_name'], vm.doc['director_info.director_facebook_likes'], id));
+
+      columns.push(formatColumn(vm.doc['director_info.director_name'], [vm.doc['director_info.director_facebook_likes']], id));
       id++;
 
       // separate by email address
       // var emailsGrouped = _.groupBy(self.activities, function (n) { return n.lead_email_s; });
       _.forOwn(vm.doc, function (value, key) {
-        if (_.endsWith('.actor_facebook_likes', key)) {
-          var actorIterator = key.split('.')[1];
-          columns.push(formatColumn(vm.doc['cast_info.' + actorIterator + '.actor_name'], value, id));
+        console.log('xxxxx', key);
+        var split = key.split('.');
+        if (split.length === 3 && split[2] === 'actor_facebook_likes') {
+          console.log('xxxx', key, value);
+          var actorIterator = split[1];
+          columns.push(formatColumn(vm.doc['cast_info.' + actorIterator + '.actor_name'], [value], id));
           id++;
         }
       });
@@ -137,7 +141,8 @@
       var list = [];
       list.push(vm.doc['director_info.director_name']);
       _.forOwn(vm.doc, function (value, key) {
-        if (_.endsWith('.actor_name', key)) {
+        var split = key.split('.');
+        if (split.length === 3 && split[2] === 'actor_name') {
           list.push(value);
         }
       });
