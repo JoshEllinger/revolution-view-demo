@@ -1,0 +1,16 @@
+<c3chart ng-if="vm.chartObj.columns[0].key" bindto-id="{{vm.chartId}}" show-labels="true">
+    <chart-column column-id="x" column-values="{{vm.getCastNamesList()}}"/>
+    <chart-column ng-repeat="column in vm.chartObj.columns"
+                column-id="{{column.key}}"
+                column-name="{{column.key}}"
+                column-color="{{vm.getColorFromInt(column.id).value}}"
+                column-values="{{column.values.join(',')}}"
+                column-type="bar"/>
+    <chart-bar ratio="{{vm.chartObj.width.ratio}}" ></bar-chart>
+    <chart-axes values-x="x"/>
+    <chart-axis>
+        <chart-axis-x axis-position="outer-center"
+                    axis-label="End users"
+                    axis-type="category"/>
+    </chart-axis>
+</c3chart>
