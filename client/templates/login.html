@@ -1,0 +1,28 @@
+---
+name: login
+url: /login
+controller: LoginController as vm
+---
+<div class="grid-frame vertical">
+
+    <!-- Top Bar -->
+    <nav class="primary title-bar">
+      <span class="center">
+        <span class="show-for-small-only"><a class="title"><img ng-if="::vm.logoLocation" ng-src="{{::vm.logoLocation}}" /><span ng-if="::(!vm.logoLocation)">{{::vm.appName}}</span></a></span>
+      </span>
+      <ul class="left menu-bar primary condense">
+        <li class="show-for-medium">
+          <a class="title"><img ng-if="::vm.logoLocation" ng-src="{{::vm.logoLocation}}" /><span ng-if="::(!vm.logoLocation)">{{::vm.appName}}</span></a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content Frame -->
+    <div class="grid-container">
+      <main class="grid-content">
+        <h1>Please login</h1>
+        <login></login>
+      </main>
+    </div>
+
+</div>

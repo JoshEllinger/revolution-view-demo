@@ -1,0 +1,16 @@
+.DS_Store
+.idea
+.sass-cache
+*.iml
+bower_components
+build
+packages
+node_modules
+npm-debug.log
+tmp
+
+FUSION_CONFIG.*.js
+!FUSION_CONFIG.sample.js
+.jira-prefix
+.project
+installer/Output

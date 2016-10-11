@@ -1,0 +1,13 @@
+<form class="content-block" ng-submit="vm.submit()">
+  <label>
+    Username
+    <input type="text" ng-model="vm.username" />
+  </label>
+  <label>
+    Password
+    <input type="password" ng-model="vm.password" />
+  </label>
+  <!-- The hidden input element only to catch RETURN press -->
+  <input type="submit" style="display:none;" />
+  <a class="button" ng-click="vm.submit()">Log In</a>
+</form>
