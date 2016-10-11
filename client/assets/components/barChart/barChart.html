@@ -1,6 +1,6 @@
 <h2 ng-if="vm.chartObj.columns[0].key">Facebook likes</h2>
 <c3chart ng-if="vm.chartObj.columns[0].key" bindto-id="{{vm.chartId}}" show-labels="true">
-    <chart-column column-id="x" column-values="Facebook likes"/>
+    <chart-column column-id="x" column-values="{{vm.doc.movie_title}}"/>
     <chart-column ng-repeat="column in vm.chartObj.columns"
                 column-id="{{column.key}}"
                 column-name="{{column.key}}"

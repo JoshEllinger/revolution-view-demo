@@ -90,10 +90,8 @@
       // separate by email address
       // var emailsGrouped = _.groupBy(self.activities, function (n) { return n.lead_email_s; });
       _.forOwn(vm.doc, function (value, key) {
-        console.log('xxxxx', key);
         var split = key.split('.');
         if (split.length === 3 && split[2] === 'actor_facebook_likes') {
-          console.log('xxxx', key, value);
           var actorIterator = split[1];
           columns.push(formatColumn(vm.doc['cast_info.' + actorIterator + '.actor_name'], [value], id));
           id++;
@@ -146,7 +144,6 @@
           list.push(value);
         }
       });
-      list.push();
       return list;
     }
 
