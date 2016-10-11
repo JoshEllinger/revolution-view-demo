@@ -1,4 +1,5 @@
 angular.module('lucidworksView.components', [
+  'lucidworksView.components.barChart',
   'lucidworksView.components.document',
   'lucidworksView.components.document_file',
   'lucidworksView.components.document_jira',
